@@ -8,6 +8,12 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
     
+    a {
+    color: #000000;
+    text-decoration: none;
+    outline: none;
+    }
+
     `;
 
 export default GlobalStyle;
