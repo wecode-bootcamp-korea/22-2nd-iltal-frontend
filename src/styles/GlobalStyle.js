@@ -2,9 +2,8 @@ import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 
 const GlobalStyle = createGlobalStyle`
-    ${reset} 
-    
-    * {
+  ${reset}
+  * {
         box-sizing: border-box;
     }
 
@@ -27,6 +26,10 @@ const GlobalStyle = createGlobalStyle`
     border: none;
     background: none;
     cursor: pointer;
+    }
+
+    body {
+      overflow-y:scroll;
     }
 
     `;

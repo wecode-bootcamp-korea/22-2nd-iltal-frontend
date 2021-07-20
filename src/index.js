@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import theme from './styles/theme';
 
 // #ROUTES
 import Routes from './Routes';
@@ -7,7 +8,6 @@ import Routes from './Routes';
 // #STYLES
 import GlobalStyle from './styles/GlobalStyle';
 import { ThemeProvider } from 'styled-components';
-import theme from './styles/theme';
 import variables from './styles/variables';
 
 ReactDOM.render(
