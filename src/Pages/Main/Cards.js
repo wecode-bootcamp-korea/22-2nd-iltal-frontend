@@ -53,8 +53,9 @@ const Card = styled.div`
 `;
 
 const BoxImg = styled.img`
-  width: 20em;
+  width: 322px;
   height: 200px;
+  object-fit: cover;
 `;
 
 const Title = styled.div`

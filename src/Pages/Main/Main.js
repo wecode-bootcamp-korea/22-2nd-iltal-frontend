@@ -4,7 +4,7 @@ import Cards from './Cards';
 import DropDownFilter from './DropDownFilter';
 import RadioBtnFilter from './RadioBtnFilter';
 import SortBtnFilter from './SortBtnFilter';
-import { GET_PRODCUT_API } from '../../config';
+import { GET_MAIN_API } from '../../config';
 import { Col } from 'antd';
 import { useLocation } from 'react-router-dom';
 
@@ -21,11 +21,10 @@ function Main() {
   useEffect(() => {
     getCards();
   }, [state, price, group, categoryId]);
-  // &region=${state}&price=${price}&group=${group}
-  // console.log(localStorage.key(0));
+
   const getCards = () => {
     fetch(
-      `${GET_PRODCUT_API}/public?${categoryId}&region=${state}&ordering=${
+      `${GET_MAIN_API}?${categoryId}&region=${state}&ordering=${
         price === '' ? 'price' : price
       }&group=${group}`,
     )

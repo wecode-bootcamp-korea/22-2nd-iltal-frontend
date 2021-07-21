@@ -28,6 +28,9 @@ export const RegistrationButton = styled.button`
   border-radius: 42px;
   background-color: black;
   color: white;
+  font-size: initial;
+  font-family: initial;
+  line-height: initial;
 
   span {
     position: absolute;
@@ -79,6 +82,7 @@ export const SupportTitle = styled.h1`
   font-size: 37px;
   font-weight: 900;
   line-height: 60px;
+  color: white;
 `;
 
 export const SupportCards = styled.div`

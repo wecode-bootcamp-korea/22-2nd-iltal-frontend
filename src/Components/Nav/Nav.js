@@ -1,32 +1,37 @@
-import { Link, useHistory } from 'react-router-dom';
-import { useState } from 'react';
-import { GET_PRODCUT_API } from '../../config';
+import { useState, useEffect } from 'react';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 function Nav(props) {
   const [activeMenu, setActiveMenu] = useState('');
   const history = useHistory();
-
+  const location = useLocation();
+  useEffect(() => {
+    console.log(activeMenu);
+  }, [activeMenu]);
+  useEffect(() => {
+    setActiveMenu(false);
+  }, [location.pathname]);
+  useEffect(() => {
+    const detectScroll = () => setActiveMenu(false);
+    document.addEventListener('scroll', detectScroll);
+    return () => {
+      document.removeEventListener('scroll', detectScroll);
+    };
+  });
   const handleMainNav = event => {
     const { name } = event.target;
     setActiveMenu(name === activeMenu ? '' : name);
     history.push(`/?category=${event.target.id}`);
   };
-
   const handleSubNav = event => {
     const { name } = event.target;
     setActiveMenu(name === activeMenu ? '' : name);
+    console.log(event.target.id);
     history.push(`/?subcategory=${event.target.id}`);
   };
-
   const goToMain = () => {
     history.push(`/`);
   };
-
-  const handleSubNavClose = event => {
-    const { name } = event.target;
-    setActiveMenu(name === activeMenu ? '' : name);
-  };
-
   return (
     <Navigator>
       <NavWarpper>
@@ -39,16 +44,11 @@ function Nav(props) {
               <button onClick={handleMainNav} name={name} id={id}>
                 {title}
               </button>
-              <SubNav
-                onMouseLeave={handleSubNavClose}
-                activeMenu={activeMenu}
-                name={name}
-              >
+              <SubNav activeMenu={activeMenu} name={name}>
                 {subNav.map((subList, index) => (
                   <li key={index}>
                     <button
                       onClick={handleSubNav}
-                      onMouseOver={!handleSubNavClose}
                       name={subList.name}
                       id={subList.id}
                     >
@@ -139,7 +139,6 @@ const SubNav = styled.ul`
   padding: 20px 0;
   visibility: ${props =>
     props.activeMenu === props.name ? 'visible' : 'hidden'};
-
   li {
     margin-right: 10px;
     a {

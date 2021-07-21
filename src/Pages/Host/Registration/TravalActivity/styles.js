@@ -20,6 +20,7 @@ export const PrevButton = styled.button`
   padding: 10px 20px 10px 20px;
   border: 1px solid #ddd;
   border-radius: 5px;
+  font-size: 13px;
 `;
 
 export const NextButton = styled.button`
@@ -29,4 +30,5 @@ export const NextButton = styled.button`
   padding: 10px 20px 10px 20px;
   border: 1px solid #ddd;
   border-radius: 5px;
+  font-size: 13px;
 `;

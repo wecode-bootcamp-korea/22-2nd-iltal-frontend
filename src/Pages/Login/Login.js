@@ -19,7 +19,7 @@ function Login() {
         })
           .then(res => res.json())
           .then(res => {
-            localStorage.setItem('access_token', res.access_token);
+            localStorage.setItem('access_token', res.TOKEN);
             alert('로그인되었습니다.');
             history.push('/');
           });

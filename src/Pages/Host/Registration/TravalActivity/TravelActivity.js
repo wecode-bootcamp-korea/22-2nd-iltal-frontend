@@ -29,12 +29,14 @@ function TravelActivity(props) {
       return;
     }
     //토큰
-    const accessToken = localStorage.getItem(localStorage.key(0));
+    const accessToken = localStorage.getItem('access_token');
 
     //헤더
     const headerData = {
       headers: { Authorization: accessToken },
     };
+
+    // console.log(accessToken);
 
     //유저데이터
     const userFormData = new FormData();

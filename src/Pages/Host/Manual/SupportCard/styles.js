@@ -19,6 +19,7 @@ export const SupportStep = styled.h3`
   span {
     position: relative;
     top: -2px;
+    color: white;
   }
 `;
 
