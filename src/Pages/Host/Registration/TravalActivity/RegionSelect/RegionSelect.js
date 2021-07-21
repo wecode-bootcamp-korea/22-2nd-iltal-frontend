@@ -32,7 +32,7 @@ function RegionSelect() {
 
         searchCoordinateToAddress(
           REGION_LIST[i].district[0].lat,
-          REGION_LIST[i].district[0].lon
+          REGION_LIST[i].district[0].lon,
         );
       }
     }
@@ -46,7 +46,7 @@ function RegionSelect() {
 
     searchCoordinateToAddress(
       districtList[e.target.value].lat,
-      districtList[e.target.value].lon
+      districtList[e.target.value].lon,
     );
   };
 
@@ -71,7 +71,7 @@ function RegionSelect() {
         const sliceSido = response.result.items[0].addrdetail.sido.slice(0, 2);
 
         setter.setAddressSido(sliceSido);
-      }
+      },
     );
   };
 

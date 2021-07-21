@@ -25,7 +25,7 @@ function Signup() {
 
   const isAllInputValid = () => {
     Object.entries(userInputs).every(([key, value]) =>
-      validationFunction[key](value)
+      validationFunction[key](value),
     );
   };
 

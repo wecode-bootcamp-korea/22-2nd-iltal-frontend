@@ -70,7 +70,7 @@ export const ProfileWrongIcon = styled.img`
 `;
 
 export const ProfileImageCorrectSampleBox = styled(
-  ProfileImageWrongSampleBox
+  ProfileImageWrongSampleBox,
 )``;
 
 export const ProfileImageCorrectImage = styled(ProfileImageWrongImage)`

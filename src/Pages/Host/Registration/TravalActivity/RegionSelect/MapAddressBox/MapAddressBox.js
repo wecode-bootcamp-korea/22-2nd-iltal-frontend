@@ -44,7 +44,7 @@ function MapAddressBox(props) {
               {
                 location: new navermaps.LatLng(
                   transAddressLat,
-                  transAddressLng
+                  transAddressLng,
                 ),
               },
               function (status, response) {
@@ -52,10 +52,10 @@ function MapAddressBox(props) {
                   response.result.items[0].addrdetail.sido.slice(0, 2);
 
                 setter.setAddressSido(sliceSido);
-              }
+              },
             );
           }
-        }
+        },
       );
     }
   };
