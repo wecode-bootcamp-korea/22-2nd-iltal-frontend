@@ -1,20 +1,15 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-
 import { POST_SIGNUP_API } from '../../../src/config.js';
 import styled from 'styled-components';
-
 import { validationFunction } from '../../utils/Validation';
-
 function Signup() {
   const [userInputs, setUserInputs] = useState({
     name: '',
-    eamil: '',
+    email: '',
     password: '',
   });
-
   const { name, email, password } = userInputs;
-
   const InputHandler = event => {
     const { name, value } = event.target;
     setUserInputs({
@@ -22,17 +17,14 @@ function Signup() {
       [name]: value,
     });
   };
-
   const isAllInputValid = () => {
-    Object.entries(userInputs).every(([key, value]) =>
-      validationFunction[key](value),
-    );
+    return Object.entries(userInputs).every(([key, value]) => {
+      return validationFunction[key](value);
+    });
   };
-
   const history = useHistory();
-
   const requestSignup = () => {
-    if (isAllInputValid) {
+    if (isAllInputValid()) {
       fetch(`${POST_SIGNUP_API}`, {
         method: 'POST',
         body: JSON.stringify({
@@ -47,7 +39,6 @@ function Signup() {
       return alert('양식을 다시 확인해주세요');
     }
   };
-
   return (
     <SignupWrapper>
       <SignupForm>
@@ -59,7 +50,6 @@ function Signup() {
         </FormHeader>
         <FormSection>
           <SrOnly>singup input</SrOnly>
-
           {SINGUP_DATA.map(({ type, name, placeholder }, index) => (
             <Input
               key={index}
@@ -76,7 +66,6 @@ function Signup() {
     </SignupWrapper>
   );
 }
-
 // Input map 데이터
 const SINGUP_DATA = [
   {
@@ -95,41 +84,34 @@ const SINGUP_DATA = [
     placeholder: '8글자 이상, 소문자나 대문자 입력하고 특수문자',
   },
 ];
-
 const SignupWrapper = styled.div`
   ${({ theme }) => theme.displayFlex('center', 'center')};
   height: 100vh;
 `;
-
 const SignupForm = styled.div`
   flex-direction: column;
   width: 420px;
   padding: 35px 70px;
   border: 1px solid #eeeeee;
 `;
-
 const FormHeader = styled.header`
   margin-bottom: 30px;
   font-size: 24px;
   line-height: 30px;
   text-align: center;
-
   h1 {
     color: ${props => props.theme.fontColor};
     font-weight: normal;
   }
 `;
-
 const FormSection = styled.section`
   display: flex;
   flex-direction: column;
   width: 100%;
 `;
-
 const SrOnly = styled.h2`
   ${props => props.theme.srOnly}
 `;
-
 const Input = styled.input`
   padding: 25px 5px 10px 5px;
   border: none;
@@ -137,7 +119,6 @@ const Input = styled.input`
   outline: none;
   font-size: 14px;
 `;
-
 const SignupButton = styled.button.attrs()`
   margin-top: 50px;
   padding: 12px 0;
@@ -145,5 +126,4 @@ const SignupButton = styled.button.attrs()`
   background-color: ${({ theme }) => theme.mainColor};
   color: #ffffff;
 `;
-
 export default Signup;

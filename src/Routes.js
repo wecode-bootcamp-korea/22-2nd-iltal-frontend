@@ -31,7 +31,6 @@ function Routes() {
           />
           <Route exact path="/detail" component={Detail} />
           <Route exact path="/products/public/:id" component={Detail} />
-          <Route exact path="/products/private/:id" component={Detail} />
           <Route exact path="/email-login" component={EmailLogin} />
         </Switch>
       </Router>
