@@ -1,6 +1,6 @@
 import { Link, useHistory } from 'react-router-dom';
 import { useState } from 'react';
-
+import { GET_PRODCUT_API } from '../../config';
 import styled from 'styled-components';
 function Nav(props) {
   const [activeMenu, setActiveMenu] = useState('');
