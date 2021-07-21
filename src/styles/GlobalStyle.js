@@ -7,6 +7,21 @@ const GlobalStyle = createGlobalStyle`
     * {
         box-sizing: border-box;
     }
+
+    a {
+        color: #333333;
+        text-decoration: none;
+        outline: none;
+    }
+
+    .sr-only {
+        position: absolute;
+        z-index: -100;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        opacity: 0;
+    }
     
     a {
     color: #000000;
