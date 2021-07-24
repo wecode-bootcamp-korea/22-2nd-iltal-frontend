@@ -23,12 +23,6 @@ const GlobalStyle = createGlobalStyle`
         opacity: 0;
     }
     
-    a {
-    color: #000000;
-    text-decoration: none;
-    outline: none;
-    }
-
     button {
     border: none;
     background: none;
