@@ -29,6 +29,12 @@ const GlobalStyle = createGlobalStyle`
     outline: none;
     }
 
+    button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    }
+
     `;
 
 export default GlobalStyle;
