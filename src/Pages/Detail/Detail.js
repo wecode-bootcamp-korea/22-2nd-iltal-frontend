@@ -97,7 +97,7 @@ const DetailWrapper = styled.div`
 `;
 
 const DetailContent = styled.section`
-  margin: 20px 200px 10px;
+  margin: 100px 200px 10px;
 
   h1 {
     margin: 10px 0;
