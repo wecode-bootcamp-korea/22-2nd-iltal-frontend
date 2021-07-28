@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { RegistrationContext, RegistrationUpdateContext } from '../../context';
 import * as S from './styles';
 
@@ -7,11 +7,11 @@ function PersonnelTypeSelect() {
   const { setter } = useContext(RegistrationUpdateContext);
 
   const handleOnePersonButton = () => {
-    setter.setActivePersonnelType(false);
+    setter.setActivePersonnelType(0);
   };
 
   const handleGroupButton = () => {
-    setter.setActivePersonnelType(true);
+    setter.setActivePersonnelType(1);
   };
 
   return (
@@ -20,13 +20,13 @@ function PersonnelTypeSelect() {
       <div>
         <S.TypeButton
           onClick={handleOnePersonButton}
-          $type={getter.activePersonnelType === false}
+          $type={getter.activePersonnelType === 0}
         >
           1인
         </S.TypeButton>
         <S.TypeButton
           onClick={handleGroupButton}
-          $type={getter.activePersonnelType === true}
+          $type={getter.activePersonnelType === 1}
         >
           그룹
         </S.TypeButton>

@@ -4,6 +4,7 @@ import SubtypeSelect from './SubTypeSelect/SubTypeSelect';
 import PersonnelTypeSelect from './PersonnelTypeSelect/PersonnelTypeSelect';
 import RegionSelect from './RegionSelect/RegionSelect';
 import PriceSelect from './PriceSelect/PriceSelect';
+import { POST_HOST_API, POST_PRODUCT_API } from '../../../../config';
 import { RegistrationContext, RegistrationUpdateContext } from '../context';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
@@ -28,8 +29,7 @@ function TravelActivity(props) {
       return;
     }
     //토큰
-    const accessToken =
-      'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.Rycaz6XldIy-q-xnORvTDQcdfOvEuTrE1BSSf74AiEQ';
+    const accessToken = localStorage.getItem(localStorage.key(0));
 
     //헤더
     const headerData = {
@@ -38,41 +38,48 @@ function TravelActivity(props) {
 
     //유저데이터
     const userFormData = new FormData();
-    const userFormDataList = [
-      { profile_url: getter.uploadProfileImage },
-      { nickname: getter.nicknameValue },
-    ];
+    // const userFormDataList = [
+    //   { profile_url: getter.uploadProfileImage },
+    //   { nickname: getter.nicknameValue },
+    // ];
 
-    for (let data of userFormDataList) {
-      console.log(data);
-      userFormData.append(data.key, data.value);
-    }
+    // for (let data of userFormDataList) {
+    //   console.log(data);
+    //   userFormData.append(data.key, data.value);
+    // }
+
+    userFormData.append('profile_url', getter.uploadProfileImage);
+    userFormData.append('nickname', getter.nicknameValue);
 
     //상품데이터
     const productFormData = new FormData();
-    const productFormDataList = [
-      { title: getter.subjectValue },
-      { region: getter.addressSido },
-      { price: getter.price },
-      { is_group: getter.activePersonnelType },
-      { host_id: 1 },
-      { subcategory_id: getter.activeSubtype },
-      { background_url: getter.uploadBackImage },
-    ];
+    // const productFormDataList = [
+    //   { title: getter.subjectValue },
+    //   { region: getter.addressSido },
+    //   { price: getter.price },
+    //   { is_group: getter.activePersonnelType },
+    //   { subcategory_id: getter.activeSubtype },
+    //   { background_url: getter.uploadBackImage },
+    // ];
 
-    for (let data of productFormDataList) {
-      console.log(data);
-      productFormData.append(data.key, data.value);
-    }
+    // for (let data of productFormDataList) {
+    //   console.log(data);
+    //   productFormData.append(data.key, data.value);
+    // }
+
+    productFormData.append('title', getter.subjectValue);
+    productFormData.append('region', getter.addressSido);
+    productFormData.append('price', getter.price);
+    productFormData.append('is_group', getter.activePersonnelType);
+    productFormData.append('subcategory_id', getter.activeSubtype);
+    productFormData.append('background_url', getter.uploadBackImage);
 
     //Post
-    axios.post('http://10.58.4.213:8000/users/host', userFormData, headerData);
+    axios.post(`${POST_HOST_API}`, userFormData, headerData);
 
-    axios.post(
-      'http://10.58.4.213:8000/products/product',
-      productFormData,
-      headerData
-    );
+    setTimeout(() => {
+      axios.post(`${POST_PRODUCT_API}`, productFormData, headerData);
+    }, 3000);
 
     alert('축하합니다. 등록이 완료되었습니다!');
 

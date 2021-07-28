@@ -68,7 +68,9 @@ function RegionSelect() {
         }
 
         setAddress(response.result.items[0].address);
-        setter.setAddressSido(response.result.items[0].addrdetail.sido);
+        const sliceSido = response.result.items[0].addrdetail.sido.slice(0, 2);
+
+        setter.setAddressSido(sliceSido);
       }
     );
   };

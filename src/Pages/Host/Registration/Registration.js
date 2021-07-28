@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import HostIntroduce from './HostIntroduce/HostIntroduce';
 import TravelActivity from './TravalActivity/TravelActivity';
 import {
