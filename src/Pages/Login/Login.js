@@ -8,10 +8,6 @@ import styled from 'styled-components';
 import { GET_KAKAO_API } from '../../../src/config.js';
 
 function Login() {
-  useEffect(() => {
-    window.Kakao.init('c9297b3b8fb3b9663321ccdf3acab7e5');
-  }, []);
-
   const history = useHistory();
 
   const loginWithKakao = () => {
@@ -59,7 +55,7 @@ function Login() {
             <i className="fab fa-facebook-f" />
           </FootList>
           <FootList>
-            <Link to="/signup">이메일</Link>
+            <Link to="/email-login">이메일</Link>
           </FootList>
           <FootList>아이디찾기</FootList>
         </FootLists>
