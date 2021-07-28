@@ -1,5 +1,5 @@
-import React, { useState, useContext } from 'react';
-import { RegistrationContext, RegistrationUpdateContext } from '../../context';
+import React, { useContext } from 'react';
+import { RegistrationUpdateContext } from '../../context';
 import * as S from './styles';
 
 function PriceSelect() {

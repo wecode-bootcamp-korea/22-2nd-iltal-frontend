@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { RegistrationContext, RegistrationUpdateContext } from '../context';
 import BackImageContainer from './BackImageContainer/BackImageContainer';
 import ProfileImageContainer from './ProfileImageContainer/ProfileImageContainer';

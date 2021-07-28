@@ -48,7 +48,10 @@ function MapAddressBox(props) {
                 ),
               },
               function (status, response) {
-                setter.setAddressSido(response.result.items[0].addrdetail.sido);
+                const sliceSido =
+                  response.result.items[0].addrdetail.sido.slice(0, 2);
+
+                setter.setAddressSido(sliceSido);
               }
             );
           }

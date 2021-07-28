@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export const SubtypeContainer = styled.div`
   display: ${props => (props.$isSelectType ? 'flex' : 'none')};
