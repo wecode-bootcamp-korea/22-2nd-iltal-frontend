@@ -24,7 +24,11 @@ function Routes() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/Manual" component={Manual} />
-          <Route exact path="/Registration" component={RegistrationContextWrapper} />
+          <Route
+            exact
+            path="/Registration"
+            component={RegistrationContextWrapper}
+          />
           <Route exact path="/detail" component={Detail} />
           <Route exact path="/products/public/:id" component={Detail} />
           <Route exact path="/products/private/:id" component={Detail} />
