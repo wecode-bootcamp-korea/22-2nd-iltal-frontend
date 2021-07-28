@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { POST_LOGIN_API } from '../../../src/config.js';
 import styled from 'styled-components';
-
+import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router';
 
 export default function EmailLogin() {
@@ -65,6 +65,12 @@ export default function EmailLogin() {
           ))}
           <LoginButton onClick={requestLogin}>로그인 하기</LoginButton>
         </FormSection>
+        <FootLists>
+          <FootList>
+            <Link to="/signup">회원 가입</Link>
+          </FootList>
+          <FootList>비밀번호찾기</FootList>
+        </FootLists>
       </EmailLoginForm>
     </EmailLoginWrapper>
   );
@@ -90,6 +96,7 @@ const EmailLoginWrapper = styled.div`
 `;
 
 const EmailLoginForm = styled.div`
+  ${({ theme }) => theme.displayFlex('center', 'center')};
   flex-direction: column;
   width: 420px;
   padding: 35px 70px;
@@ -132,4 +139,26 @@ const LoginButton = styled.button`
   font-size: 14px;
   background-color: ${({ theme }) => theme.mainColor};
   color: #ffffff;
+`;
+
+const FootLists = styled.ul`
+  display: flex;
+  margin-top: 100px;
+  font-size: 12px;
+`;
+
+const FootList = styled.li`
+  margin-right: 15px;
+
+  &::after {
+    content: '|';
+    margin-left: 10px;
+    line-height: 14px;
+  }
+
+  &:last-child::after {
+    content: '';
+    margin-left: 0;
+    line-height: 0;
+  }
 `;
