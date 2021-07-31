@@ -7,7 +7,7 @@
 ## 프로젝트 소개
 - 호스트와 게스트를 연결하여 다양한 액티비티 제공하는 사이트입니다.
 - 우리의 프로젝트는, 탈잉의 기능(여행 및 액티비티 리스트, 검색 필터링, 호스트 등록 등)을 대한민국의 실제 여행 및 액티비티 데이터에 적용을 모티브한 프로젝트입니다.
-- 짧은 프로젝트 기간동안 개발에 집중해야 하므로 디자인 및 기능의 기획 부분만 클론했습니다.
+- 짧은 프로젝트 기간동안 개발에 집중해야 하므로 디자인 및 기능의 기획 부분만 모티브로 하였습니다.
 - 개발은 초기 세팅부터 전부 직접 구현했으며, 모두 백앤드와 연결하여 실제 사용할 수 있는 서비스 수준으로 개발하려고 노력했습니다.
 - [백엔드 github 링크](https://github.com/wecode-bootcamp-korea/22-2nd-iltal-backend)
 - [프론트엔드 github 링크](https://github.com/wecode-bootcamp-korea/22-2nd-iltal-frontend)
@@ -31,12 +31,39 @@
 
 > - [Notion](https://www.notion.so/API-8ea4af1e82ad494d9a9f9f696946ac94)
 > - [Trello](https://trello.com/b/RkgLsPe1/iltal%F0%9F%8F%83%F0%9F%8F%BB%E2%99%82%EF%B8%8F)
+
 ### 적용 기술
 
 > - Front-End : javascript, React.js, styled component, react hook, axios, naver map api
 > - Back-End : Python, Django web framework, MySQL, Bcrypt, Pyjwt, AWS, Docker
 > - Common : POSTMAN, Kakao REST API
 
+</br>
+
+### 💻 Front-End 구현 기능
+
+#### 회원가입 / 로그인
+- validtaion을 통한 일반 회원가입, 로그인 기능 구현
+- 카카오 API를 이용한 소셜 로그인 기능 구현
+
+#### 상세 페이지
+- access token 유,무 따른 Public / Private 로 엔드포인트 구분
+- 구분된 Public / Private 에 따른 좋아요, 예약하기 버튼 기능 구현
+
+#### 메인
+- Card Components 구현
+- 카테고리 지역 필터링 기능
+- 카테고리 가격 필터링 기능
+- 카테고리 그룹 필터링 기능
+
+#### 호스트 등록
+##### Manual페이지
+- useHistory를 이용해 버튼을 누르면 Registeration 으로 넘어가도록 구현
+
+##### Registeration 페이지
+- 네이버지도 API 구현
+- 배경 이미지, 프로필 사진 업로드 및 미리보기 구현
+- 여행 카테고리, 서브 카테고리, 그룹, 상세 주소 등 호스트 정보 입력 후 등록 구현
 
 
 ### 💻 Back-End 구현 기능
@@ -65,36 +92,7 @@
 - 호스트 수정 (닉네임 프로필 사진 프론트 폼데이터로 받아서 처리)
 - 여행 액티비티 등록 (호스트에 대한 여행 혹은 액티비티 등록)
 
-### 💻 Front-End 구현 기능
-
-#### 회원가입 / 로그인
-- validtaion을 통한 일반 회원가입, 로그인 기능 구현
-- 카카오 API를 이용한 소셜 로그인 기능 구현
-
-#### 상세 페이지
-- access token 따른 Public / Private 구분
-- Public / Private 에따른 좋아요, 예약하기 버튼 기능 구현
-
-#### 메인
-- Card Components 구현
-- 카테고리 지역 필터링 기능
-- 카테고리 가격 필터링 기능
-- 카테고리 그룹 필터링 기능
-
-#### 호스트 등록
-##### Manual페이지
-- useHistory를 이용해 버튼을 누르면 Registrarion으로 넘어가도록 구현
-
-##### Registeration페이지
-- 네이버지도 API 구현
-- 배경 이미지, 프로필 사진 업로드 및 미리보기 구현
-- 여행 카테고리, 서브 카테고리, 그룹, 상세 주소 등 호스트 정보 입력 후 등록 구현
-
-
-
-
-
-<br>
+</br>
 
 ## Reference
 
