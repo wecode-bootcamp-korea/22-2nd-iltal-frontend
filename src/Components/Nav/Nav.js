@@ -32,6 +32,8 @@ function Nav(props) {
   const goToMain = () => {
     history.push(`/`);
   };
+  const get_access_token = localStorage.getItem(localStorage.key(0));
+  // const remove_access_token = localStorage.removeItem(localStorage.key(0));
   return (
     <Navigator>
       <NavWarpper>
@@ -65,9 +67,7 @@ function Nav(props) {
         <li>
           <Link to="/Manual">호스트 등록</Link>
         </li>
-        <li>
-          <Link to="/login">로그인</Link>
-        </li>
+        <li>{get_access_token ? '' : <Link to="/login">로그인</Link>}</li>
       </RegisterAndLogin>
     </Navigator>
   );

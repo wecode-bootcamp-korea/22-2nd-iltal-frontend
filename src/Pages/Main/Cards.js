@@ -19,7 +19,7 @@ function Cards(props) {
           <Title>
             {title}
             <Price>₩{parseInt(price).toLocaleString()}원</Price>
-            <LikeText>{like_count}명이 좋아합니다.</LikeText>
+            {/* <LikeText>{like_count}명이 좋아합니다.</LikeText> */}
           </Title>
           <ProfileBox>
             <SubBox>
@@ -28,9 +28,9 @@ function Cards(props) {
               <Nick>{nick}</Nick>
             </SubBox>
             <LikeButton
-              onClick={() => {
-                like(like_count + 1);
-              }}
+            // onClick={() => {
+            //   like(like_count + 1);
+            // }}
             >
               <Heart clicked={!like} className="far fa-heart fa-lg"></Heart>
               <Heart clicked={like} className="fas fa-heart fa-lg"></Heart>
